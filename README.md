@@ -1,7 +1,56 @@
 # Tagify - Ontology-driven Data Tagging
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mgorav/Tagify/tree/main.svg?style=svg&circle-token=CCIPAT_8dsVTiu6F6romJqm99VA1B_b03d8b2a0a59b5911dc4c7c38640ed95f9494304)](https://dl.circleci.com/status-badge/redirect/gh/mgorav/Tagify/tree/main)
+
 Tagify leverages a formal ontology to classify data assets and expose tags through a robust API.
+
+## Overview
+
+An ontology formally defines the concepts, entities, relationships and properties within a domain. It provides a shared conceptual model of the knowledge in that domain.
+
+For example, an ontology could model:
+
+- Products
+- Customers
+- Orders
+- Inventory
+
+And relationships like:
+
+- Customer "places" Order
+- Order "includes" Product
+
+A taxonomy categorizes entities into hierarchical classifications, often derived from the ontology relationships.
+
+For example, the product taxonomy could be:
+
+- Product
+    - Electronics
+        - Computers
+            - Laptops
+            - Desktops
+        - Phones
+            - Smartphones
+    - Home
+        - Furniture
+        - Appliances
+
+## Key Benefits
+
+Using an ontology and taxonomy provides benefits like:
+
+- Standard terminology for interoperability
+- Reasoning to derive new knowledge
+- Classification for governance and analysis
+
+## Tagging for Governance
+
+For data governance, tags can be derived from the ontology and taxonomy to classify data assets like:
+
+```
+acme.customer.PII -> Labels customer PII data
+acme.product.inventory -> Tags product inventory datasets 
+```
 
 ## Conceptual Overview
 
@@ -150,6 +199,17 @@ GET /tags/acme.order/lifecycle
 ]
 ```
 
+The tagging REST APIs could enable this as:
+
+Endpoint | Description | Example Response
+--- | --- | ---
+GET /tags/namespaces | Get all namespaces | ["acme"]
+GET /tags/acme/semantics | Get semantic tags | ["acme.customer", "acme.product"]  
+GET /tags/acme/customer | Get all customer tags | ["acme.customer.PII", "acme.customer.profile"]
+GET /tags/acme/product | Get all product tags | ["acme.product.inventory", "acme.product.pricing"]
+
+
+
 ## Integrations with Data Platforms
 
 Tagify provides seamless integration with leading data engineering platforms like Databricks, Snowflake, and Hive to enable unified data governance through consistent classification.
@@ -201,6 +261,40 @@ Key benefits include:
 - Streamlined data discovery
 - Automated lifecycle management
 
+Here is a section on the technologies used and how to run the application:
+
+## Technologies Used
+
+- Java 17
+- Spring Boot 3.2.1
+- Spring Web MVC
+- SpringDoc OpenAPI 3.0 for documentation
+- Eclipse RDF4J for RDF data management
+
+## Running Tagify
+
+The application is packaged as a Java Spring Boot application.
+
+### Prerequisites
+
+- Java 17
+- Maven
+
+### Steps
+
+1. Clone the repository
+2. Navigate to the project directory
+3. Build using Maven: `mvn clean install`
+4. Run the application: `java -jar Tagify-0.0.1-in-momory.jar`
+5. Access Swagger UI documentation on http://localhost:8080/swagger-ui/index.html
+
+The application exposes REST APIs for taxonomy and tagging operations. The RDF ontology is loaded in an in-memory store on startup.
+
+The main components are:
+
+- `TaggingController` - REST API endpoints
+- `TaggingService` - Business logic
+- `TaggingRepository` - RDF4J based data access
 
 ### NOTE
 For more information and to request a demo, please contact our team at gonnect.ask@gmail.com. We would be happy to schedule a call to discuss our solutions in more detail and answer any questions you may have.
