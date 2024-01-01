@@ -261,7 +261,46 @@ Key benefits include:
 - Streamlined data discovery
 - Automated lifecycle management
 
-Here is a section on the technologies used and how to run the application:
+## Architecture Design
+
+Tagify leverages a layered architecture aligned to its ontology-based classification capabilities.
+
+The architecture consists of 3 key layers - Ontology, Service and Integration:
+
+![img_1.png](img_1.png)
+
+**Ontology Layer**
+
+This models the core RDF Ontology which formally defines the concepts, relationships and taxonomy for the domain. Key components:
+
+- RDF Ontology: Formal conceptual model in RDF format
+- Taxonomy Classification: Organizes concepts into hierarchical taxonomies
+- Metadata Repositories: Links ontology to external systems
+
+The ontology provides the foundation for deriving standardized taxonomy tags consistently across tools.
+
+**Service Layer**
+
+This exposes APIs for tagging operations and handles taxonomy business logic:
+
+- Tagify API: REST endpoints for tagging APIs aligned to taxonomy
+- Tagify Logic: Business logic for retrieving ontology-based tags
+- Triple Store: Manages taxonomy terms modeled in RDF graphs
+
+The service layer leverages the ontology terms to deliver unified tagging capabilities.
+
+**Integration Layer**
+
+This connects the taxonomy to data assets and policy catalogs:
+
+- Tagged Assets: Annotates datasets with classification tags
+- Policy Rules: Links governance policies to specific tags
+- Enforcement Actions: Executes actions like access restrictions based on tags
+
+The integration later enables scalable governance workflows driven by shared taxonomy.
+
+The ontology ties the components together by providing common semantics accessible via consistent RDF graphs and taxonomy structure across systems.
+
 
 ## Technologies Used
 
