@@ -216,12 +216,12 @@ When executed, these **query templates** match against the RDF dataset graph to 
 **Solutions** are result sets with variable **bindings**:
 
 ```
-------------------------------
+-------------------------------
 | customer      | profile     |        
 ============================= |
-| :Alice        | acme:Gold== |
-| :Bob          | acme:Silve= |
------------------------------
+| :Alice        | acme:Gold   |
+| :Bob          | acme:Silve  |
+------------------------------
 ```
 
 In this way, SPARQL provides all the necessary vocabulary to construct, evaluate, and derive answers over ontology and taxonomy knowledge models encoded in RDF.
