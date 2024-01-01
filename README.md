@@ -2,7 +2,7 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mgorav/Tagify/tree/main.svg?style=svg&circle-token=CCIPAT_8dsVTiu6F6romJqm99VA1B_b03d8b2a0a59b5911dc4c7c38640ed95f9494304)](https://dl.circleci.com/status-badge/redirect/gh/mgorav/Tagify/tree/main)
 
-[![CircleCI](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/test_summary_badge.svg?circle-token=1df99d24f742d4367ab60048fd479c99070bfc09)](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/artifacts)
+[![CircleCI](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/test_summary_badge.svg?circle-token=CCIPAT_MP57GT9N2en77dPgau2qhf_bf84ae3aadd1ed52c65f0e3320535d1fda283b24)](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/artifacts)
 
 Tagify leverages a formal ontology to classify data assets and expose tags through a robust API.The Tagify taxonomy engineering service purposefully traverses key dimensions to bridge ontology and organization:
 
