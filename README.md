@@ -4,13 +4,13 @@
 
 Tagify leverages a formal ontology to classify data assets and expose tags through a robust API.The Tagify taxonomy engineering service purposefully traverses key dimensions to bridge ontology and organization:
 
-Modularity → We methodically compose coherent modules with crisp focus areas to organize knowledge into intuitive bundles. This prevents fragmentation by grouping related concepts.
+Modularity → Methodically compose coherent modules with crisp focus areas to organize knowledge into intuitive bundles. This prevents fragmentation by grouping related concepts.
 
 Consistency → Aligning vocabulary and semantics is woven across modules so taxonomy consumers have clarity, not chaos. Controlled vocabularies become second nature.
 
-Extensibility → We future-proof taxonomies, ensuring ontologies can evolve without brittleness. Dot notation provides durable links that gracefully adapt domains.
+Extensibility → Future-proof taxonomies, ensuring ontologies can evolve without brittleness. Dot notation provides durable links that gracefully adapt domains.
 
-Customizability → Our taxonomies aren’t one-size-fits all. We collaborate with customers to incorporate proprietary elements that meet specialized needs.
+Customizability → Taxonomies aren’t one-size-fits all. We collaborate with customers to incorporate proprietary elements that meet specialized needs.
 
 Accessibility → Dot notation taxonomy conventions remove complexity barriers.
 
