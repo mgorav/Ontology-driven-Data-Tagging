@@ -185,6 +185,50 @@ In total, RDF delivers the building blocks for an extensible, modular enterprise
 
 SPARQL is the standard RDF graph query language, providing robust capabilities to search and traverse ontology taxonomies.
 
+SPARQL queries match **triple patterns** made up of:
+
+- **Subject** - Resource being described
+- **Predicate** - Relationship, property of subject
+- **Object** - Target resource or literal value
+
+For example:
+
+```
+acme:Customer  acme:hasProfile  acme:PremiumProfile
+
+Subject        Predicate          Object
+```
+
+Common predicates include:
+
+- **rdfs:subClassOf** - Taxonomy hierarchies
+- **rdf:type** - Class membership
+- **owl:sameAs** - Equivalence
+
+**Triple patterns** are used in SPARQL templates with **variables** denoted by ? or $ symbols:
+
+```
+?customer acme:hasProfile ?profile .
+```
+
+When executed, these **query templates** match against the RDF dataset graph to bind variables to resources.
+
+**Solutions** are result sets with variable **bindings**:
+
+```
+------------------------------
+| customer      | profile     |        
+============================= |
+| :Alice        | acme:Gold== |
+| :Bob          | acme:Silve= |
+-----------------------------
+```
+
+In this way, SPARQL provides all the necessary vocabulary to construct, evaluate, and derive answers over ontology and taxonomy knowledge models encoded in RDF.
+
+The semantic graph structure creates a web of relationships flexibly queried using SPARQL's powerful graph pattern matching capabilities.
+
+
 Key SPARQL fundamentals:
 
 **Basic Patterns** - Match graph patterns in queries:
