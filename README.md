@@ -81,6 +81,47 @@ An ontology defines concepts and relationships to model a domain. Tagify uses th
 
 For example, `acme.inventory.SupplierTable` attaches a classification tag. The taxonomy is derived from ontology relationships.
 
+## Taxonomy Foundations
+
+The taxonomy leverages mathematical classification techniques grounded in formal concept analysis (FCA), a branch of lattice theory centering set-theoretic structures.
+
+FCA relies on the fundamental notion of a formal context defined over objects and attributes. This context forms a mathematical lattice conveying conceptual hierarchies.
+
+The ontology taxonomy aligns to this formal context structure, enabling set membership checks for classification. For an object `x` and concept `C`, this lattice membership is formalized as:
+
+```
+x ∈ C ⟺ {a ∈ A | (x,a) ∈ R} = C′ 
+```
+
+Where `A` is the set of attributes, `R` is a relation between objects `X` and attributes `A`, and `C'` is the prime operator deriving intent from extent.
+
+This means an object `x` belongs to a concept `C` if its attributes match the prime derivation of `C` based on relational mappings.
+
+The taxonomy applies this principle to categorize entities through hierarchical concepts indexed by coordinated attributes. The ontology provides the contextual foundation through its embedded relational graph.
+```
+Let X = {Apple, Orange, Table, Chair} be product items
+Let A = {Fruit, Furniture, Sweet, Citrus} be product attributes
+
+Define relation R ⊆ X × A as:
+
+R = { (Apple, Fruit), (Apple, Sweet),
+(Orange, Fruit), (Orange, Citrus),  
+(Table, Furniture),
+(Chair, Furniture) }
+
+This forms the formal context K = (X, A, R)
+
+Now consider concept C = Fruit
+Its prime operator derivation is:
+C' = {a ∈ A | for all x ∈ X, if (x, a) ∈ R, then x ∈ C}
+= {Fruit}
+
+Then Apple ∈ Fruit since:
+{a ∈ A | (Apple, a) ∈ R} = {Fruit, Sweet} = C'
+
+Similarly, Orange ∈ Fruit using the same lattice membership logic.
+```
+
 ### Comparing Classification and Categorization
 
 Classification and categorization offer complementary approaches for organizing elements which can be compared across several key dimensions:
