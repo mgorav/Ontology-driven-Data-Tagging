@@ -139,6 +139,109 @@ In short, classification relies on rigid, formal conditions for set membership i
 
 Hybrid approaches can integrate these mechanisms to balance tradeoffs. The organizing principles match use case goals - classification for inference-based reasoning leveraging knowledge bases, categorization for pragmatic similarity judgments adjusting to new observations.
 
+## RDF Ontology Drivers
+
+RDF provides a robust framework for knowledge representation leveraging discrete semantic triples and graph models. This shapes an adaptable substrate for structuring rich ontologies amenable to multi-faceted taxonomy derivation.
+
+Core RDF components include:
+
+**Statements** - Captured in (subject, predicate, object) triples describing resources. For example:
+
+```
+acme:CustomerProfile a rdf:Class .
+```  
+
+**Vocabularies** - Use namespace prefixes to qualify terms. Example:
+
+```
+acme:VIPCustomer rdf:type acme:CustomerProfile .
+```
+
+**Ontologies** - Build conceptual models comprising entities, relationships, properties within a domain of interest.
+
+**Taxonomies** - Hierarchical classification structures based on ontology semantics. For example:
+
+```
+acme:CustomerProfile
+  acme:BasicProfile
+  acme:VIPProfile
+```
+
+RDF ontologies and taxonomies are powered by shared referenceable URIs allowing integration across contexts. Descriptive triples flexibly relate resources without requiring rigid schemas.
+
+**Query** - SPARQL protocol enables complex graph query patterns across taxonomy dimensions:
+
+```
+SELECT ?custProfile WHERE {
+  ?custProfile rdf:type acme:CustomerProfile .
+}
+```
+
+This returns all customer profile subclasses in the ontology. The underlying RDF graphs interlink taxonomy concepts through rich semantic relationships.
+
+In total, RDF delivers the building blocks for an extensible, modular enterprise ontology amenable to interleaving hierarchical and relational views - perfect for multi-axis taxonomy development tightly coupled with underlying domain models.
+
+## SPARQL Powers Taxonomy Queries
+
+SPARQL is the standard RDF graph query language, providing robust capabilities to search and traverse ontology taxonomies.
+
+Key SPARQL fundamentals:
+
+**Basic Patterns** - Match graph patterns in queries:
+
+```
+?customer rdf:type acme:VIPCustomer .
+``` 
+
+**Prefixes** - Qualify vocabulary terms:
+
+``` 
+PREFIX acme: <http://acme.com/ns#>
+```
+
+**Variable Binding** - Assign results:
+
+```
+?profile = acme:PlatinumProfile
+```
+
+**Property Paths** - Travers relationships:
+
+``` 
+acme:Customer acme:hasProfile+ ?profile .
+``` 
+
+**Results** - Table, JSON, Graph formats:
+
+```
+-----------------------------
+| profile                 |
+============================
+| acme:GoldProfile        |
+| acme:PlatinumProfile    |
+-----------------------------
+```
+
+**Federation** - Distribute queries across graphs.
+
+**Inferencing** - Apply rules to derive facts.
+
+**Analytics** - Aggregations, slices, dices across taxonomy dimensions.
+
+For example, drilling down profiles by state:
+
+```sql
+SELECT ?state (count(?profile) as ?count)
+WHERE {
+  ?customer acme:isLocatedIn ?state .
+  ?customer acme:hasProfile ?profile
+}
+GROUP BY ?state  
+```
+
+In total, SPARQL unlocks sophisticated ontology-based taxonomy analysis to power next-generation metadata intelligence.
+
+
 ## Technical Details
 
 The ontology is modeled in W3C standard RDF (Resource Description Framework):
