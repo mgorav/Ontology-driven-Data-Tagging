@@ -337,9 +337,9 @@ The application is packaged as a Java Spring Boot application.
 
 ### Steps
 
-1. Clone the repository
-2. Navigate to the project directory
-3. Build using Maven: `mvn clean install`
+1. Clone the repository (not available in free version)
+2. Navigate to the project directory (not available in free version)
+3. Build using Maven: `mvn clean install` (no available in free version)
 4. Run the application: `java -jar Tagify-0.0.1-in-momory.jar`
 5. Access Swagger UI documentation on http://localhost:8080/swagger-ui/index.html
 
