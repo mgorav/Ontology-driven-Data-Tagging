@@ -496,8 +496,6 @@ tagify:Access
     tagify:Write
 ```  
 
-Excellent point! Adding examples of the taxonomy exposure through APIs would make this more concrete. Here is an update:
-
 ### Exposing Taxonomy via APIs
 
 | API | Description | Sample Output |
@@ -522,8 +520,7 @@ GET /assets/customers/tags -> ["tagify:Confidential"]
 
 Here is an example showcasing Gem Retail Company's use of Tagify RDF and taxonomy standards:
 
-```
-## Example: Gem Retail Tagging Standards 
+## Example: Gem Retail Tagging Standards
 
 Gem Retail has adopted Tagify standards for developing its customer focused enterprise ontology.
 
@@ -533,7 +530,7 @@ The core namespace is defined as:
 @prefix gem: <https://data.gemretail.com/> .
 ```
 
-**Top-level Branches**  
+**Top-level Branches**
 
 The main top branches represent broad classification types:
 
@@ -571,9 +568,9 @@ gem:Finance
 gem:Health
 ```
 
-**Sample Tag**  
+**Sample Tag**
 
-Classifying customer profile data as confidential PII:  
+Classifying customer profile data as confidential PII:
 
 ```
 gem:ConfidentialProfileData a rdf:Class;
@@ -592,7 +589,6 @@ name STRING TAG gem:ConfidentialProfileData
 ```
 
 This demonstrates applying Tagify guidelines to define standards meeting Gem Retail's business goals. The consistent ontology and tagging drives data governance and security.
-```
 
 Gem Retail implements Tagify standards for a consistent customer data taxonomy enabling unified governance.
 
@@ -787,8 +783,6 @@ This demonstrates how an ontology-based tagging approach delivers:
 4. Network effects accumulating value
 
 In effect, structured metadata gets woven into the organizational fabric rather than ending up in siloed dead ends. Tagify orchestrates this seamless embedding to drive circulation of meaningful metadata fueling downstream initiatives.
-
-
 
 ### NOTE
 For more information and to request a demo, please contact our team at gonnect.ask@gmail.com. We would be happy to schedule a call to discuss our solutions in more detail and answer any questions you may have.
