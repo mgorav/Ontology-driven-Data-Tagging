@@ -1,19 +1,18 @@
-# Tagify - Unleashing the Power of Ontology-Driven Data Tagging
+# Tagify: Unleashing the Power of Ontology-Driven Data Tagging
 
-[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mgorav/Tagify/tree/main.svg?style=svg&circle-token=CCIPAT_8dsVTiu6F6romJqm99VA1B_b03d8b2a0a59b5911dc4c7c38640ed95f9494304)](https://dl.circleci.com/status-badge/redirect/gh/mgorav/Tagify/tree/main)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/mgorav/Tagify/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/mgorav/Tagify/tree/main)
 
-[![CircleCI](https://circleci.com/gh/mgorav/Tagify/tree/main.svg?style=shield&circle-token=e3c70c65cd695ed11883ffabd8c8a6e8aff9ee07)](https://circleci.com/gh/mgorav/Tagify/tree/main
-)
+[![CircleCI](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/test_summary_badge.svg)](https://circleci.com/api/v1/project/github/mgorav/Tagify/latest/artifacts)
 
 Tagify pioneers a revolutionary approach for effective data governance and precision insights. It seamlessly connects your enterprise knowledge graph with data assets through a formal ontology. This enables consistent tagging with unmatched granularity to unlock cross-functional collaboration.
 
 **Core Benefits:**
 
-* Unified Language: Establishes shared semantics to break down data silos across systems
-* Compliance Automation: Enforces policies and regulations through integrated governance
-* Accelerated Innovation: Allows instant self-service access to empower users
-* Enriched Analytics: Facilitates targeted segmentation and analysis
-* Frictionless Adoption: Embraces leading data platforms like Snowflake for easy integration
+* **_Unified Language_**: Establishes shared semantics to break down data silos across systems
+* **_Compliance Automation_**: Enforces policies and regulations through integrated governance
+* **_Accelerated Innovation_**: Allows instant self-service access to empower users
+* **_Enriched Analytics_**: Facilitates targeted segmentation and analysis
+* **_Frictionless Adoption_**: Embraces leading data platforms like Snowflake for easy integration
 
 Architectural excellence with RDF Foundation: Constructed on the extensible industry-gold standard Resource Description Framework to future-proof taxonomies.
 
@@ -23,11 +22,11 @@ Architectural excellence with RDF Foundation: Constructed on the extensible indu
 
 **Intuitive Taxonomy Design Principles:**
 
-* Modularity: Compose coherent modules to organize knowledge into intuitive bundles
-* Consistency: Align semantics across modules for clarity
-* Extensibility: Enable flexible evolution without brittleness
-* Customizability: Incorporate proprietary elements to meet specialized needs
-* Accessibility: Simplify complexity through dot notation conventions
+* **_Modularity_**: Compose coherent modules to organize knowledge into intuitive bundles
+* **_Consistency_**: Align semantics across modules for clarity
+* **_Extensibility_**: Enable flexible evolution without brittleness
+* **_Customizability_**: Incorporate proprietary elements to meet specialized needs
+* **_Accessibility_**: Simplify complexity through dot notation conventions
 
 ![img_2.png](img_2.png)
 
@@ -71,6 +70,7 @@ Beyond quotes, the analyst reports referenced above offer deeper insights into:
 * The key challenges and considerations for implementation
 * Comparison of available solutions in the market
 * Future trends and predictions for this technology
+
 ## Overview
 
 An ontology formally defines the concepts, entities, relationships and properties within a domain. It provides a shared conceptual model of the knowledge in that domain.
@@ -78,14 +78,14 @@ An ontology formally defines the concepts, entities, relationships and propertie
 For example, an ontology could model:
 
 - Products
-- Customers
-- Orders
-- Inventory
+    - Customers
+    - Orders
+    - Inventory
 
 And relationships like:
 
 - Customer "places" Order
-- Order "includes" Product
+    - Order "includes" Product
 
 A taxonomy categorizes entities into hierarchical classifications, often derived from the ontology relationships.
 
@@ -107,8 +107,8 @@ For example, the product taxonomy could be:
 Using an ontology and taxonomy provides benefits like:
 
 - Standard terminology for interoperability
-- Reasoning to derive new knowledge
-- Classification for governance and analysis
+    - Reasoning to derive new knowledge
+    - Classification for governance and analysis
 
 ## Tagging for Governance
 
@@ -128,6 +128,8 @@ An ontology defines concepts and relationships to model a domain. Tagify uses th
 ```
 
 For example, `acme.inventory.SupplierTable` attaches a classification tag. The taxonomy is derived from ontology relationships.
+
+Here is a suggested addition to the README.md file covering taxonomy and mathematical theories:
 
 ## Taxonomy Foundations
 
@@ -264,18 +266,17 @@ When executed, these **query templates** match against the RDF dataset graph to 
 **Solutions** are result sets with variable **bindings**:
 
 ```
--------------------------------
-| customer      | profile     |        
-============================= |
-| :Alice        | acme:Gold   |
-| :Bob          | acme:Silve  |
-------------------------------
+-----------------------------
+| customer      | profile |        
+============================
+| :Alice        | acme:Gold |
+| :Bob          | acme:Silver |
+-----------------------------
 ```
 
 In this way, SPARQL provides all the necessary vocabulary to construct, evaluate, and derive answers over ontology and taxonomy knowledge models encoded in RDF.
 
 The semantic graph structure creates a web of relationships flexibly queried using SPARQL's powerful graph pattern matching capabilities.
-
 
 Key SPARQL fundamentals:
 
@@ -333,7 +334,6 @@ GROUP BY ?state
 
 In total, SPARQL unlocks sophisticated ontology-based taxonomy analysis to power next-generation metadata intelligence.
 
-
 ## Technical Details
 
 The ontology is modeled in W3C standard RDF (Resource Description Framework):
@@ -364,12 +364,6 @@ acme:Confidential rdf:type acme:Access
 ```
 
 This enables consistent semantics across tools leveraging the ontology.
-
-### OAS UI
-
-![img.png](img.png)
-
-## RDF Ontology Modeling
 
 The ontology represents the taxonomy in RDF:
 
@@ -463,7 +457,150 @@ GET /tags/acme/semantics | Get semantic tags | ["acme.customer", "acme.product"]
 GET /tags/acme/customer | Get all customer tags | ["acme.customer.PII", "acme.customer.profile"]
 GET /tags/acme/product | Get all product tags | ["acme.product.inventory", "acme.product.pricing"]
 
+### RDF Creation Standards
 
+- Use common RDF namespaces like RDF, RDFS, OWL to leverage existing semantics
+- Define a standard domain namespace, e.g. `tagify:`
+- Create abbreviations for long namespaces to simplify entity IRIs
+- Follow CamelCase convention for class names
+- Use descriptive labels and comments on classes and relations
+- Specify domain and range for properties
+
+###  RDF Taxonomy Guidelines
+
+- Top-level branch for main classifications like `tagify:Semantics`
+- Second level for data sensitivity, access levels etc
+- Third level for specific categories
+- Fourth level for actual asset tags
+
+###  Tagging Conventions
+
+| Taxonomy Level | Example Prefix | Description |
+|--|--|--| 
+| Namespace | tagify: | Top level domain |   
+| Level 1 Class | tagify:Semantics | High-level classification |
+| Level 2 Class | tagify:Sensitive | Data sensitivity |
+| Level 3 Class |  tagify:Confidential | Sensitive subtype |
+| Tag | tagify:Confidential | Actual asset tag |
+
+**Sample Taxonomy**
+
+```
+tagify:Semantics
+  tagify:Sensitive
+    tagify:Confidential
+  
+tagify:Access
+  tagify:Permission
+    tagify:Read
+    tagify:Write
+```  
+
+Excellent point! Adding examples of the taxonomy exposure through APIs would make this more concrete. Here is an update:
+
+### Exposing Taxonomy via APIs
+
+| API | Description | Sample Output |
+|-|-|-|
+| `GET /tags/namespaces` | Get defined namespaces | `["tagify"]` |
+| `GET /tags/tagify/level1` | Get level 1 branches | `["tagify:Classification", "tagify:Access"]` |  
+| `GET /tags/tagify/Classification/level2` | Get level 2 groups under Classification | `["tagify:Sensitivity", "tagify:Criticality"]` |
+| `GET /tags/tagify/Sensitivity/level3` | Get level 3 categories under Sensitivity | `["tagify:Confidential", "tagify:Private"]`  |
+| `GET /assets/customers/tags` | Get tags for customer asset | `["tagify:Confidential", "tagify:EU"]` |
+
+And the taxonomy alignment would look like:
+
+```
+tagify:Classification
+  tagify:Sensitivity
+    tagify:Confidential
+
+GET /tags/tagify/Sensitivity/level3 -> ["tagify:Confidential"]
+
+GET /assets/customers/tags -> ["tagify:Confidential"]
+```
+
+Here is an example showcasing Gem Retail Company's use of Tagify RDF and taxonomy standards:
+
+```
+## Example: Gem Retail Tagging Standards 
+
+Gem Retail has adopted Tagify standards for developing its customer focused enterprise ontology.
+
+The core namespace is defined as:
+
+```
+@prefix gem: <https://data.gemretail.com/> .
+```
+
+**Top-level Branches**  
+
+The main top branches represent broad classification types:
+
+```
+gem:Classification
+gem:Interaction
+gem:Access
+```
+
+**Level 2 Classes**
+
+Captures domain specific groups under the branches suited for Gem:
+
+``` 
+gem:Classification
+gem:Customer
+gem:Product
+
+gem:Access  
+gem:Permission
+gem:PII
+```  
+
+**Level 3 Categories**
+
+Adds depth with specialized sub-types:
+
+```
+gem:Customer
+gem:Profile
+gem:Contact
+
+gem:PII
+gem:Finance
+gem:Health
+```
+
+**Sample Tag**  
+
+Classifying customer profile data as confidential PII:  
+
+```
+gem:ConfidentialProfileData a rdf:Class;
+rdf:type gem:Profile, gem:PII;
+```
+
+**Using Tags**
+
+Apps apply tags to data assets:
+
+```
+CREATE TABLE customers (
+id INT TAG gem:identifies
+name STRING TAG gem:ConfidentialProfileData
+)
+```
+
+This demonstrates applying Tagify guidelines to define standards meeting Gem Retail's business goals. The consistent ontology and tagging drives data governance and security.
+```
+
+Gem Retail implements Tagify standards for a consistent customer data taxonomy enabling unified governance.
+
+### OAS UI
+
+![img.png](img.png)
+
+## RDF Ontology Modeling
 
 ## Integrations with Data Platforms
 
@@ -512,9 +649,9 @@ This demonstrates direct application of Tagify taxonomy tags to data assets with
 Key benefits include:
 
 - Unified semantics for interoperability
-- Consistent access controls
-- Streamlined data discovery
-- Automated lifecycle management
+    - Consistent access controls
+    - Streamlined data discovery
+    - Automated lifecycle management
 
 ## Architecture Design
 
@@ -529,8 +666,8 @@ The architecture consists of 3 key layers - Ontology, Service and Integration:
 This models the core RDF Ontology which formally defines the concepts, relationships and taxonomy for the domain. Key components:
 
 - RDF Ontology: Formal conceptual model in RDF format
-- Taxonomy Classification: Organizes concepts into hierarchical taxonomies
-- Metadata Repositories: Links ontology to external systems
+    - Taxonomy Classification: Organizes concepts into hierarchical taxonomies
+    - Metadata Repositories: Links ontology to external systems
 
 The ontology provides the foundation for deriving standardized taxonomy tags consistently across tools.
 
@@ -539,8 +676,8 @@ The ontology provides the foundation for deriving standardized taxonomy tags con
 This exposes APIs for tagging operations and handles taxonomy business logic:
 
 - Tagify API: REST endpoints for tagging APIs aligned to taxonomy
-- Tagify Logic: Business logic for retrieving ontology-based tags
-- Triple Store: Manages taxonomy terms modeled in RDF graphs
+    - Tagify Logic: Business logic for retrieving ontology-based tags
+    - Triple Store: Manages taxonomy terms modeled in RDF graphs
 
 The service layer leverages the ontology terms to deliver unified tagging capabilities.
 
@@ -549,21 +686,20 @@ The service layer leverages the ontology terms to deliver unified tagging capabi
 This connects the taxonomy to data assets and policy catalogs:
 
 - Tagged Assets: Annotates datasets with classification tags
-- Policy Rules: Links governance policies to specific tags
-- Enforcement Actions: Executes actions like access restrictions based on tags
+    - Policy Rules: Links governance policies to specific tags
+    - Enforcement Actions: Executes actions like access restrictions based on tags
 
 The integration later enables scalable governance workflows driven by shared taxonomy.
 
 The ontology ties the components together by providing common semantics accessible via consistent RDF graphs and taxonomy structure across systems.
 
-
 ## Technologies Used
 
 - Java 17
-- Spring Boot 3.2.1
-- Spring Web MVC
-- SpringDoc OpenAPI 3.0 for documentation
-- Eclipse RDF4J for RDF data management
+    - Spring Boot 3.2.1
+    - Spring Web MVC
+    - SpringDoc OpenAPI 3.0 for documentation
+    - Eclipse RDF4J for RDF data management
 
 ## Running Tagify
 
@@ -572,23 +708,23 @@ The application is packaged as a Java Spring Boot application.
 ### Prerequisites
 
 - Java 17
-- Maven
+    - Maven
 
 ### Steps
 
-1. Clone the repository (not available in free version)
-2. Navigate to the project directory (not available in free version)
-3. Build using Maven: `mvn clean install` (no available in free version)
-4. Run the application: `java -jar Tagify-0.0.1-in-momory.jar`
-5. Access Swagger UI documentation on http://localhost:8080/swagger-ui/index.html
+1. Clone the repository
+    2. Navigate to the project directory
+    3. Build using Maven: `mvn clean install`
+    4. Run the application: `java -jar target//Tagify-0.0.1-SNAPSHOT.jar` or `mvn spring-boot:run`
+    5. Access Swagger UI documentation on http://localhost:8080/swagger-ui/index.html
 
 The application exposes REST APIs for taxonomy and tagging operations. The RDF ontology is loaded in an in-memory store on startup.
 
 The main components are:
 
 - `TaggingController` - REST API endpoints
-- `TaggingService` - Business logic
-- `TaggingRepository` - RDF4J based data access
+    - `TaggingService` - Business logic
+    - `TaggingRepository` - RDF4J based data access
 
 ## Metadata Management via Ontology Tagging
 
