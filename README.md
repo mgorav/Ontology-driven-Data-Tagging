@@ -69,3 +69,8 @@ Dive into the Contents for technical details and embark on your semantic journey
 9.  [Metadata Management](mdm.md)
 10. [Technology used & how to run](tech.md)
 11. [Contact](contact.md)
+
+Let's go Tagify .....
+
+![img_6.png](img_6.png)
+
