@@ -39,7 +39,8 @@ Tags become precise and meaningful, not merely arbitrary labels.
 
 Intuitive REST APIs empower seamless integration with data platforms like Databricks, Snowflake, and Hive.
 Assets are tagged directly within your preferred environments, effortlessly weaving metadata into the fabric of your data ecosystem.
-4. **Integration Symphony:**
+
+5. **Integration Symphony:**
 
 Tagify seamlessly connects with policy catalogs and enforcement mechanisms.
 Governance actions are triggered automatically based on tags, ensuring compliance and risk mitigation.
