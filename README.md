@@ -2,6 +2,9 @@
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/mgorav/Tagify/tree/main.svg?style=svg&circle-token=CCIPAT_8dsVTiu6F6romJqm99VA1B_b03d8b2a0a59b5911dc4c7c38640ed95f9494304)](https://dl.circleci.com/status-badge/redirect/gh/mgorav/Tagify/tree/main)
 
+[![CircleCI](https://circleci.com/gh/mgorav/Tagify/tree/main.svg?style=shield&circle-token=e3c70c65cd695ed11883ffabd8c8a6e8aff9ee07)](https://circleci.com/gh/mgorav/Tagify/tree/main
+)
+
 Tagify pioneers a revolutionary approach for effective data governance and precision insights. It seamlessly connects your enterprise knowledge graph with data assets through a formal ontology. This enables consistent tagging with unmatched granularity to unlock cross-functional collaboration.
 
 **Core Benefits:**
