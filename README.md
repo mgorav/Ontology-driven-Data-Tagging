@@ -69,7 +69,8 @@ Dive into the Contents for technical details and embark on your semantic journey
 8.  [Integration with Data Platforms & Architecture](integrations.md)
 9.  [Metadata Management](mdm.md)
 10. [Technology used & how to run](tech.md)
-11. [Contact](contact.md)
+11. [Integration Test](integration_tests.md)
+12. [Contact](contact.md)
 
 Let's go Tagify .....
 
