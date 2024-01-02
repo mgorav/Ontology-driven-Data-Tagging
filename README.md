@@ -597,8 +597,6 @@ Gem Retail implements Tagify standards for a consistent customer data taxonomy e
 
 ![img.png](img.png)
 
-## RDF Ontology Modeling
-
 ## Integrations with Data Platforms
 
 Tagify provides seamless integration with leading data engineering platforms like Databricks, Snowflake, and Hive to enable unified data governance through consistent classification.
