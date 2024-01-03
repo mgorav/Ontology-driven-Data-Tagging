@@ -77,7 +77,7 @@ Let's go Tagify .....
 ```bash
  java -jar executable/Tagify-0.0.1-in-momory.jar
 ```
-To test [Tagify APIs](apis/api-tests.rest) file to execute APIs:
+To test [Tagify APIs](apis/api-tests.rest) to execute APIs:
 
 1. Save the content as a file named api-tests.rest.
 2. Open IntelliJ IDEA.
