@@ -1,0 +1,90 @@
+
+# POST request to create RDF data
+POST http://localhost:8080/tags/rdf?format=turtle
+Content-Type: application/json
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Customer semantic tags
+<http://rush.customer#Semantic> a rdf:TYPE .
+<http://rush.customer.ProfileData> a <http://rush.customer#Semantic> .
+<http://rush.customer.OrderData> a <http://rush.customer#Semantic> .
+<http://rush.customer.DeliveryData> a <http://rush.customer#Semantic> .
+
+# Product affinity tags
+<http://rush.product#Discovery> a rdf:TYPE .
+<http://rush.product.preferredProduct> a <http://rush.product#Discovery> .
+<http://rush.product.alsoPurchased> a <http://rush.product#Discovery> .
+
+# Customer lifecycle tags
+<http://rush.customer#DataLifecycle> a rdf:TYPE .
+<http://rush.customer.Retention.1Year> a <http://rush.customer#DataLifecycle> .
+<http://rush.customer.Retention.2Years> a <http://rush.customer#DataLifecycle> .
+<http://rush.customer.Disposition.Archive> a <http://rush.customer#DataLifecycle> .
+
+# Access control tags
+<http://rush.customer#Access> a rdf:TYPE .
+<http://rush.customer.ReadAccess> a <http://rush.customer#Access> .
+<http://rush.customer.WriteAccess> a <http://rush.customer#Access> .
+
+# Unknown ownership tags
+<http://rush.customer#UnknownOwnership> a rdf:TYPE .
+<http://rush.customer.CustomerDataOwnership> a <http://rush.customer#UnknownOwnership> .
+
+# Unknown classification tags
+<http://rush.customer#UnknownClassification> a rdf:TYPE .
+<http://rush.customer.ProductDataClassification> a <http://rush.customer#UnknownClassification> .
+
+# Schema mapping tags
+<http://rush.customer#Mapping> a rdf:TYPE .
+<http://rush.customer.customers> <http://mapping#to> <http://mapping/customers> .
+<http://rush.customer.orders> <http://mapping#to> <http://mapping/orders> .
+
+# Level 2 classification tags
+<http://rush.customer#DataClass> a rdf:TYPE .
+<http://rush.customer.CustomerData> a <http://rush.customer#DataClass> .
+<http://rush.customer.OrderData> a <http://rush.customer#DataClass> .
+<http://rush.customer.ProfileData> a <http://rush.customer#DataClass> .
+
+# Level 3 classification tags
+<http://rush.customer#Information> a rdf:TYPE .
+<http://rush.customer.PIIData> rdfs:subClassOf <http://rush.customer#Information> .
+<http://rush.customer.ContactData> rdfs:subClassOf <http://rush.customer#Information> .
+
+
+### `testGetSemanticCustomerTags`:
+
+GET http://localhost:8080/tags/rush.customer/semantics
+
+### `testGetDiscoveryAffinityTags`:
+
+GET http://localhost:8080/tags/rush.product/discovery
+
+### `testGetLifecycleRetentionTags`:
+
+GET http://localhost:8080/tags/rush.customer/lifecycle
+
+### `testGetAccessTags`:
+
+GET http://localhost:8080/tags/rush.customer/access
+
+### `testGetUnknownOwnershipTags`:
+
+GET http://localhost:8080/tags/rush.customer/unknown/ownership
+
+### `testGetUnknownClassificationTags`:
+
+GET http://localhost:8080/tags/rush.customer/unknown/classification
+
+### `testGetSchemaMappingTags`:
+
+GET http://localhost:8080/tags/rush.customer/mapping/map
+
+### `testGetLevel2Tags`:
+
+GET http://localhost:8080/tags/rush.customer/level2/DataClass
+
+### `testGetLevel3Tags`:
+
+GET http://localhost:8080/tags/rush.customer/level3/DataClass/Information

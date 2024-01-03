@@ -74,5 +74,16 @@ Dive into the Contents for technical details and embark on your semantic journey
 
 Let's go Tagify .....
 
+```bash
+ java -jar Tagify-0.0.1-in-momory.jar
+```
+To use this[api-tests.rest](api-tests.rest) file to execute APIs:
+
+1. Save the content as a file named api-tests.rest.
+2. Open IntelliJ IDEA.
+3. Go to "View" -> "Tool Windows" -> "HTTP Client".
+4. In the HTTP Client tab, you can create a new scratch file and paste the content.
+5. Use the execute icon next to each request block to run the corresponding test.
+
 ![img_6.png](img_6.png)
 

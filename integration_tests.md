@@ -61,6 +61,62 @@ The RDF (Resource Description Framework) provided here represents the tags and r
 <http://rush.customer.ContactData> rdfs:subClassOf <http://rush.customer#Information> .
 ```
 
+Store above RDF using below command:
+```
+curl -X 'POST' \
+  'http://localhost:8080/tags/rdf?format=turtle' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Customer semantic tags
+<http://rush.customer#Semantic> a rdf:TYPE .
+<http://rush.customer.ProfileData> a <http://rush.customer#Semantic> .
+<http://rush.customer.OrderData> a <http://rush.customer#Semantic> .
+<http://rush.customer.DeliveryData> a <http://rush.customer#Semantic> .
+
+# Product affinity tags
+<http://rush.product#Discovery> a rdf:TYPE .
+<http://rush.product.preferredProduct> a <http://rush.product#Discovery> .
+<http://rush.product.alsoPurchased> a <http://rush.product#Discovery> .
+
+# Customer lifecycle tags
+<http://rush.customer#DataLifecycle> a rdf:TYPE .
+<http://rush.customer.Retention.1Year> a <http://rush.customer#DataLifecycle> .
+<http://rush.customer.Retention.2Years> a <http://rush.customer#DataLifecycle> .
+<http://rush.customer.Disposition.Archive> a <http://rush.customer#DataLifecycle> .
+
+# Access control tags
+<http://rush.customer#Access> a rdf:TYPE .
+<http://rush.customer.ReadAccess> a <http://rush.customer#Access> .
+<http://rush.customer.WriteAccess> a <http://rush.customer#Access> .
+
+# Unknown ownership tags
+<http://rush.customer#UnknownOwnership> a rdf:TYPE .
+<http://rush.customer.CustomerDataOwnership> a <http://rush.customer#UnknownOwnership> .
+
+# Unknown classification tags
+<http://rush.customer#UnknownClassification> a rdf:TYPE .
+<http://rush.customer.ProductDataClassification> a <http://rush.customer#UnknownClassification> .
+
+# Schema mapping tags
+<http://rush.customer#Mapping> a rdf:TYPE .
+<http://rush.customer.customers> <http://mapping#to> <http://mapping/customers> .
+<http://rush.customer.orders> <http://mapping#to> <http://mapping/orders> .
+
+# Level 2 classification tags
+<http://rush.customer#DataClass> a rdf:TYPE .
+<http://rush.customer.CustomerData> a <http://rush.customer#DataClass> .
+<http://rush.customer.OrderData> a <http://rush.customer#DataClass> .
+<http://rush.customer.ProfileData> a <http://rush.customer#DataClass> .
+
+# Level 3 classification tags
+<http://rush.customer#Information> a rdf:TYPE .
+<http://rush.customer.PIIData> rdfs:subClassOf <http://rush.customer#Information> .
+<http://rush.customer.ContactData> rdfs:subClassOf <http://rush.customer#Information> .'
+```
+
 This RDF representation captures the main concepts and relationships between them based on the tags created in your integration tests. The actual RDF structure may need further refinement based on your specific ontology and use case.
 
 ![img_7.png](img_7.png)
@@ -118,3 +174,161 @@ The integration tests validate various functionalities of the tagging service, e
 | `testGetLevel3Tags`                 | Validates the retrieval of level 3 classification tags under a given namespace, class, and level 2 classification. |
 
 These integration tests cover a wide range of scenarios related to semantic tagging, ensuring the proper functioning of the tagging service in different use cases.
+
+
+### `testGetSemanticCustomerTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/semantics
+```
+Output:
+
+```json
+[
+  "rush.customer.ProfileData",
+  "rush.customer.OrderData",
+  "rush.customer.DeliveryData"
+]
+```
+
+### `testGetDiscoveryAffinityTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.product/discovery
+```
+Output:
+
+```json
+[
+  "rush.product.preferredProduct",
+  "rush.product.alsoPurchased"
+]
+```
+
+### `testGetLifecycleRetentionTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/lifecycle
+```
+
+Output:
+```json
+[
+  "rush.customer.Retention.1Year",
+  "rush.customer.Retention.2Years",
+  "rush.customer.Disposition.Archive"
+]
+```
+
+### `testGetAccessTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/access
+```
+
+Output:
+
+```json
+[
+  "rush.customer.ReadAccess",
+  "rush.customer.WriteAccess"
+]
+```
+
+### `testGetUnknownOwnershipTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/unknown/ownership
+```
+
+Output:
+
+```json
+[
+  "rush.customer.CustomerDataOwnership"
+]
+```
+
+### `testGetUnknownClassificationTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/unknown/classification
+```
+
+Output:
+
+```json
+[
+  "rush.customer.ProductDataClassification"
+]
+```
+
+### `testGetSchemaMappingTags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/mapping/map
+```
+
+Output:
+
+```json
+{
+  "rush.customer.ProductDataClassification": "rush.customer#UnknownClassification",
+  "rush.customer.CustomerData": "rush.customer#DataClass",
+  "rush.customer#Access": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer#UnknownOwnership": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer.DeliveryData": "rush.customer#Semantic",
+  "rush.customer.OrderData": "rush.customer#DataClass",
+  "rush.customer#DataClass": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer.PIIData": "rush.customer#Information",
+  "rush.customer.WriteAccess": "rush.customer#Access",
+  "rush.customer.ContactData": "rush.customer#Information",
+  "rush.product.alsoPurchased": "rush.product#Discovery",
+  "rush.customer.ReadAccess": "rush.customer#Access",
+  "rush.customer.CustomerDataOwnership": "rush.customer#UnknownOwnership",
+  "rush.customer.Disposition.Archive": "rush.customer#DataLifecycle",
+  "rush.customer.Retention.1Year": "rush.customer#DataLifecycle",
+  "rush.customer#DataLifecycle": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer#Information": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer.ProfileData": "rush.customer#DataClass",
+  "rush.customer.orders": "mapping.orders",
+  "rush.customer.Retention.2Years": "rush.customer#DataLifecycle",
+  "rush.product.preferredProduct": "rush.product#Discovery",
+  "rush.customer.customers": "mapping.customers",
+  "rush.customer#Semantic": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.product#Discovery": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer#UnknownClassification": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE",
+  "rush.customer#Mapping": "www.w3.org.1999.02.22-rdf-syntax-ns#TYPE"
+}
+```
+
+### `testGetLevel2Tags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/level2/DataClass
+```
+
+Output:
+
+```json
+[
+  "rush.customer.CustomerData",
+  "rush.customer.OrderData",
+  "rush.customer.ProfileData"
+]
+```
+
+### `testGetLevel3Tags`:
+
+```bash
+curl -X GET http://localhost:8080/tags/rush.customer/level3/DataClass/Information
+```
+
+Output:
+
+```json
+[
+  "rush.customer.PIIData",
+  "rush.customer.ContactData"
+]
+```
