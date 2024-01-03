@@ -162,4 +162,4 @@ Gem Retail implements Tagify standards for a consistent customer data taxonomy e
 
 ### OAS UI
 
-![img.png](img.png)
+![img.png](../images/img.png)

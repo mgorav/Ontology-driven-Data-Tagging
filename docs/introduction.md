@@ -22,7 +22,7 @@ Architectural excellence with RDF Foundation: Constructed on the extensible indu
 * **_Customizability_**: Incorporate proprietary elements to meet specialized needs
 * **_Accessibility_**: Simplify complexity through dot notation conventions
 
-![img_2.png](img_2.png)
+![img_2.png](../images/img_2.png)
 
 Unlock the Potential of Your Data:
 

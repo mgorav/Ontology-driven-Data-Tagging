@@ -26,14 +26,14 @@ Here's how it works:
 Concepts and relationships within your domain are meticulously modeled in RDF, a globally recognized knowledge representation standard.
 This creates a shared semantic foundation, ensuring consistency and interoperability.
 
-<img src="img_3.png" width="600" style="display: inline-block;">
+<img src="images/img_3.png" width="600" style="display: inline-block;">
 
 2. **A Powerful Taxonomy:**
 
 A hierarchical classification system emerges from the ontology, enabling granular organization of assets.
 Tags become precise and meaningful, not merely arbitrary labels.
 
-<img src="img_4.png" width="600" style="display: inline-block;">
+<img src="images/img_4.png" width="600" style="display: inline-block;">
 
 3. **Smart Tagging APIs:**
 
@@ -45,7 +45,7 @@ Assets are tagged directly within your preferred environments, effortlessly weav
 Tagify seamlessly connects with policy catalogs and enforcement mechanisms.
 Governance actions are triggered automatically based on tags, ensuring compliance and risk mitigation.
 
-![img_5.png](img_5.png)
+![img_5.png](images/img_5.png)
 
 **_Experience the Benefits:_**
 
@@ -59,25 +59,25 @@ Governance actions are triggered automatically based on tags, ensuring complianc
 Dive into the Contents for technical details and embark on your semantic journey today!
 
 ## Contents
-1.  [Introduction](introduction.md)
-2.  [Value Proposition](value_proposition.md)
+1.  [Introduction](docs/introduction.md)
+2.  [Value Proposition](docs/value_proposition.md)
 3.  [Overview](overview.md)
-4.  [Taxonomy Foundation](taxonomy_foundation.md)
-5.  [Tagging & Taxonomy](tagging_taxonomy.md)
-6.  [Standards & Guidelines - RDF & Tagging](standard_guidelines.md)
-7.  [Taxonomy via APis](taxonomy_apis.md)
-8.  [Integration with Data Platforms & Architecture](integrations.md)
-9.  [Metadata Management](mdm.md)
-10. [Technology used & how to run](tech.md)
-11. [Integration Test](integration_tests.md)
-12. [Contact](contact.md)
+4.  [Taxonomy Foundation](docs/taxonomy_foundation.md)
+5.  [Tagging & Taxonomy](docs/tagging_taxonomy.md)
+6.  [Standards & Guidelines - RDF & Tagging](docs/standard_guidelines.md)
+7.  [Taxonomy via APis](docs/taxonomy_apis.md)
+8.  [Integration with Data Platforms & Architecture](docs/integrations.md)
+9.  [Metadata Management](docs/mdm.md)
+10. [Technology used & how to run](docs/tech.md)
+11. [Integration Test](docs/integration_tests.md)
+12. [Contact](docs/contact.md)
 
 Let's go Tagify .....
 
 ```bash
  java -jar Tagify-0.0.1-in-momory.jar
 ```
-To use this[api-tests.rest](api-tests.rest) file to execute APIs:
+To use this[api-tests.rest](apis/api-tests.rest) file to execute APIs:
 
 1. Save the content as a file named api-tests.rest.
 2. Open IntelliJ IDEA.
@@ -85,5 +85,5 @@ To use this[api-tests.rest](api-tests.rest) file to execute APIs:
 4. In the HTTP Client tab, you can create a new scratch file and paste the content.
 5. Use the execute icon next to each request block to run the corresponding test.
 
-![img_6.png](img_6.png)
+![img_6.png](images/img_6.png)
 

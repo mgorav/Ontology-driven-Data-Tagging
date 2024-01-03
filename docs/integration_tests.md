@@ -119,7 +119,7 @@ curl -X 'POST' \
 
 This RDF representation captures the main concepts and relationships between them based on the tags created in your integration tests. The actual RDF structure may need further refinement based on your specific ontology and use case.
 
-![img_7.png](img_7.png)
+![img_7.png](../images/img_7.png)
 
 This table breaks down each resource, its type, and any relationships or comments associated with it in the RDF.
 

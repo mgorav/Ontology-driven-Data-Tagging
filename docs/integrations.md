@@ -55,7 +55,7 @@ Tagify leverages a layered architecture aligned to its ontology-based classifica
 
 The architecture consists of 3 key layers - Ontology, Service and Integration:
 
-![img_1.png](img_1.png)
+![img_1.png](../images/img_1.png)
 
 **Ontology Layer**
 
