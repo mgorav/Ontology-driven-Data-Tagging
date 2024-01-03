@@ -75,7 +75,7 @@ Dive into the Contents for technical details and embark on your semantic journey
 Let's go Tagify .....
 
 ```bash
- java -jar Tagify-0.0.1-in-momory.jar
+ java -jar executable/Tagify-0.0.1-in-momory.jar
 ```
 To use this[api-tests.rest](apis/api-tests.rest) file to execute APIs:
 
