@@ -89,5 +89,4 @@ To test [Tagify APIs](apis/api-tests.rest) to execute APIs:
 
 ## UI (wip)
 
-![img.png](docs/UI.png)
-
+![UI.png](images/UI.png)
