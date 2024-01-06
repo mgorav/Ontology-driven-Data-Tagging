@@ -92,3 +92,4 @@ To test [Tagify APIs](apis/api-tests.rest) to execute APIs:
 ![UI.png](images/UI.png)
 ![UI1.png](images/UI1.png)
 ![UI2.png](images/UI2.png)
+![UI3.png](images/UI3.png)
