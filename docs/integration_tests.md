@@ -60,6 +60,76 @@ The RDF (Resource Description Framework) provided here represents the tags and r
 <http://rush.customer.PIIData> rdfs:subClassOf <http://rush.customer#Information> .
 <http://rush.customer.ContactData> rdfs:subClassOf <http://rush.customer#Information> .
 ```
+Visual graph representation of above RDF graph:
+
+```mermaid
+graph LR
+    
+    subgraph "Namespaces"
+        A[rdf]
+        B[rdfs]
+    end
+
+    subgraph "Core Types"
+        C{#Semantic}
+        D{#Discovery}
+        E{#DataLifecycle}
+        F{#Access}
+        G{#UnknownOwnership} 
+        H{#UnknownClassification}
+        I{#Mapping}
+        J{#DataClass}
+        K{#Information}
+    end
+
+    subgraph "#Semantic"
+        C-->L(ProfileData)
+        C-->M(OrderData)
+        C-->N(DeliveryData)
+    end
+
+    subgraph "#Discovery" 
+        D-->O(preferredProduct)
+        D-->P(alsoPurchased)
+    end   
+
+    subgraph "#DataLifecycle"
+        E-->Q(Retention.1Year)
+        E-->R(Retention.2Years)
+        E-->S(Disposition.Archive)
+    end
+
+    subgraph "#Access"
+        F-->T(ReadAccess)
+        F-->U(WriteAccess)
+    end
+
+    subgraph "#UnknownOwnership"
+        G-->V(CustomerDataOwnership)
+    end
+    
+    subgraph "#UnknownClassification"
+        H-->W(ProductDataClassification)
+    end
+    
+    subgraph "#Mapping"
+        I-->X(customers)
+        X-->Y[customers_mapping]
+        I-->Z(orders)
+        Z-->A1[orders_mapping]
+    end
+
+    subgraph "#DataClass" 
+        J-->B1(CustomerData)
+        J-->C1(OrderData)
+    end
+
+    subgraph "#Information"
+        K-->D1(PIIData)
+        K-->E1(ContactData)
+    end
+
+```
 
 Store above RDF using below command:
 ```
